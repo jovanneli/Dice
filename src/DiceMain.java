@@ -21,7 +21,8 @@ public class DiceMain
 			roll1 = jovi.roll();
 			roll2 = peppa.roll();
 			sum1 = roll1 + roll2;
-			System.out.println(roll1 + " " + roll2 + " Sum of roll: " + sum1);
+			System.out.println("Die 1: " + roll1 + " " + "Die 2: " + roll2 + 
+			" Sum of roll: " + sum1);
 		}
 		System.out.println("Value of roll: " + roll1);
 		System.out.println("Sum of rolls: " + sum1);
@@ -37,47 +38,22 @@ public class DiceMain
 		System.out.println("Please enter a number between 2 and 12: "); 
 		int randomNumber= in.nextInt();
 		
-		if (randomNumber > 12)
+		while (randomNumber > 12 || randomNumber < 2)
 		{
 			System.out.println("That is not a valid number.");
 			System.out.println("Please enter a number between 2 and 12: "); 
-			int randomNumber1= in.nextInt();
-			while (sum2 != randomNumber1)
-			{
-				number1 = natpole.roll();
-				number2 = boi.roll();
-				sum2 = number1 + number2;
-				System.out.println(number1 + " " + number2 + 
-			    " Sum of roll: " + sum2);
-			}
-			System.out.println("Number of times rolled: " + natpole.numRolls());
+			randomNumber= in.nextInt();
 		}
-		else if (randomNumber < 2)
+		
+		while (sum2 != randomNumber)
 		{
-			System.out.println("That is not a valid number.");
-			System.out.println("Please enter a number between 2 and 12: "); 
-			int randomNumber2= in.nextInt();
-			while (sum2 != randomNumber2)
-			{
-				number1 = natpole.roll();
-				number2 = boi.roll();
-				sum2 = number1 + number2;
-				System.out.println(number1 + " " + number2 + 
-			    " Sum of roll: " + sum2);
-			}
-			System.out.println("Number of times rolled: " + natpole.numRolls());
+			number1 = natpole.roll();
+			number2 = boi.roll();
+			sum2 = number1 + number2;
+			System.out.println("Die 1: " + number1 + " " + "Die 2: " + number2 + 
+			" Sum of roll: " + sum2);
 		}
-		else
-		{
-			while (sum2 != randomNumber)
-			{
-				number1 = natpole.roll();
-				number2 = boi.roll();
-				sum2 = number1 + number2;
-				System.out.println(number1 + " " + number2 + 
-				" Sum of roll: " + sum2);
-			}
-			System.out.println("Number of times rolled: " + natpole.numRolls());
-		}
+		System.out.println("Number of times rolled: " + natpole.numRolls());
+	
 	}
 }
